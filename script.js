@@ -7,12 +7,13 @@ let resultado;
 
 game();
 
-
+// Genera aleatoriamente una opción para la PC
 function getComputerChoice() {
     const armas = ["Espada", "Hacha", "Lanza"];
     return armas[Math.floor(Math.random() * armas.length)];
 }
 
+// Juega una ronda
 function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
@@ -37,6 +38,7 @@ function playRound(playerSelection, computerSelection){
 console.log(playerScore);
 console.log(computerScore);
 
+// Utiliza playRound() para jugar 5 rondas
 function game(){
     for(let i = 0; i < 5; i++){
         let playerSelection = prompt("Elige entre Espada, Lanza o Hacha:").toLowerCase();
@@ -56,6 +58,8 @@ function game(){
         alert(resultado.replace(playerSelection, playerSelectionTitle).replace(computerSelectionTitle, computerSelectionTitle));
     }
 }
+
+// Imprime los resultados del juego y el ganador
 console.log(`Puntajes: ${jugador}: ${playerScore}, Computadora: ${computerScore}`);
 alert(`Puntajes: ${jugador}: ${playerScore}, Computadora: ${computerScore}`);
 if(playerScore > computerScore) {
